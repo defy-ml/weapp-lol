@@ -1,0 +1,28 @@
+<!--me.wxml-->
+<view class="container">
+    <view class="header">
+        <image class="header-bg" src="../../image/header_bg_big.jpg"></image>
+        <view class="header-photo">
+            <image class="header-frame" src="../../image/game_header_frame.png"></image>
+            <image class="game-header" src="../../image/nearbydefaulthead.png"></image>
+            <image class="level-bg" src="../../image/game_level_bg.png"></image>
+            <text class="level-text">30</text>
+        </view>
+        <view class="game-info">
+            <text class="game-nick">老子就是喷子</text>
+            <image class="gender" src="../../image/gender_man.png"></image>
+        </view>
+    </view>
+    <view class="main">
+        <view class="nav">
+            <view class="nav-box" data-navType="record" bindtap="navTap">战绩</view>
+            <view class="nav-box" data-navType="ability" bindtap="navTap">能力</view>
+            <view class="nav-box" data-navType="assets" bindtap="navTap">资产</view>
+        </view>
+        <view class="main-view">
+            <view class="main-view-item" wx:if="{{record}}">战绩</view>
+            <view class="main-view-item" wx:if="{{ability}}">能力</view>
+            <view class="main-view-item" wx:if="{{assets}}">资产</view>
+        </view>
+    </view>
+</view>

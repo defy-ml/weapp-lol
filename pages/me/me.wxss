@@ -1,0 +1,96 @@
+/**me.wxss**/
+.header{
+  width: 750rpx;
+  position: relative;
+  height: 353rpx;
+}
+
+.header-bg {
+  width: 750rpx;
+  height: 353rpx;
+}
+
+.header-photo{
+  width: 114rpx;
+  height: 114rpx;
+  position: absolute;
+  top: 119.5rpx;
+  left: 50%;
+  margin-left: -57rpx;
+}
+
+.header-frame{
+  width: 114rpx;
+  height: 114rpx;
+}
+
+.game-header{
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 100%;
+  position: absolute;
+  top: 9rpx;
+  left: 8.5rpx;
+}
+
+.level-bg{
+  width: 36rpx;
+  height: 36rpx;
+  position: absolute;
+  bottom: 0;
+  right: -10rpx;
+}
+
+.level-text{
+  color: #ffffff;
+  font-size: 12rpx;
+  position: absolute;
+  bottom: 4rpx;
+  right: -5rpx;
+}
+
+.game-info{
+  width: 750rpx;
+  text-align: center;
+  color: #ffffff;
+  font-size: 18rpx;
+  position: absolute;
+  bottom: 80rpx;
+}
+
+.gender{
+  width: 22rpx;
+  height: 22rpx;
+  vertical-align: middle;
+}
+
+.main{
+  width: 750rpx;
+  height: 100%;
+}
+
+.nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: lightgrey;
+  width: 750rpx;
+  height: 80rpx;
+}
+
+.nav-box{
+  border-color:lightgrey;
+  background: 0;
+  flex: 1;
+  text-align: center;
+  color: black;
+  font-size: 25rpx;
+}
+
+.main-view{
+  width: 100%;
+}
+
+.main-view-item{
+  width: 100%;
+}
