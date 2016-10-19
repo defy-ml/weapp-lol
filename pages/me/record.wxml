@@ -1,0 +1,52 @@
+<template name="record-list">
+    <view class="main-view-item" hidden="{{record}}">
+        <!--战绩头部-->
+        <view class="record-top">
+            <!--段位-->
+            <view class="record-top-left">
+                <image class="dan-img" src="../../image/dan_0.png"></image>
+                <text class="dan-name">最强王者</text>
+            </view>
+            <view class="record-top-right">
+                <text class="win-rate-lb">胜率</text><text class="win-rate-vl">52%</text>
+                <text class="games-total-lb">总局数</text><text class="games-total-vl">4621</text>
+                <!--荣誉-->
+                <view class="honor">
+                    <view class="honor-box">
+                        <image src="../../image/honor_god.png"></image>
+                        <text>超神</text>
+                    </view>
+                    <view class="honor-box">
+                        <image src="../../image/honor_5_kill.png"></image>
+                        <text>五杀</text>
+                    </view>
+                    <view class="honor-box">
+                        <image src="../../image/honor_4_kill.png"></image>
+                        <text>四杀</text>
+                    </view>
+                    <view class="honor-box" style="flex:0.2;padding-right:10rpx;">
+                        <image style="width:10rpx;height:18rpx;" src="../../image/arrow_right_gray_dark.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!--战绩列表-->
+        <view class="my-record">
+            <text class="my-record-title">我的战绩</text>
+            <view class="record-cell">
+                <view class="cell-date">10-16</view>
+                <view class="cell-main">
+                    <view class="cell-left">
+                        <view class="game-box win_bg"></view>
+                        <image class="hero-avatar" src="../../image/find_icon_normal.jpg"></image>
+                    </view>
+                    <view class="cell-right">
+                        <text class="game-result win">胜利　　　　12/0/5</text>
+                        <text class="game-type">经典匹配</text>
+                        <image class="arrow_right" src="../../image/arrow_right_gray_dark.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

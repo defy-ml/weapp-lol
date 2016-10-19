@@ -1,28 +1,37 @@
 <!--me.wxml-->
 <view class="container">
+    <!--头部-->
     <view class="header">
+        <!--背景-->
         <image class="header-bg" src="../../image/header_bg_big.jpg"></image>
-        <view class="header-photo">
-            <image class="header-frame" src="../../image/game_header_frame.png"></image>
-            <image class="game-header" src="../../image/nearbydefaulthead.png"></image>
-            <image class="level-bg" src="../../image/game_level_bg.png"></image>
-            <text class="level-text">30</text>
-        </view>
+        <picker bindchange="selectArea" value="{{areaIndex}}" range="{{areaItems}}">
+            <view class="header-photo">
+                <image class="header-frame" src="../../image/game_header_frame.png"></image>
+                <image class="game-header" src="../../image/nearbydefaulthead.png"></image>
+                <image class="level-bg" src="../../image/game_level_bg.png"></image>
+                <text class="level-text">30</text>
+            </view>
+        </picker>
         <view class="game-info">
             <text class="game-nick">老子就是喷子</text>
             <image class="gender" src="../../image/gender_man.png"></image>
         </view>
     </view>
     <view class="main">
+        <!--选项卡-->
         <view class="nav">
-            <view class="nav-box" data-navType="record" bindtap="navTap">战绩</view>
-            <view class="nav-box" data-navType="ability" bindtap="navTap">能力</view>
-            <view class="nav-box" data-navType="assets" bindtap="navTap">资产</view>
+            <view class="nav-box" data-navType="record" bindtap="navTap" style="color:{{!record ? '#CC8F33' : ''}}">战绩</view>
+            <view class="nav-box" data-navType="ability" bindtap="navTap" style="color:{{!ability ? '#CC8F33' : ''}}">能力</view>
+            <view class="nav-box" data-navType="assets" bindtap="navTap" style="color:{{!assets ? '#CC8F33' : ''}}">资产</view>
         </view>
         <view class="main-view">
-            <view class="main-view-item" wx:if="{{record}}">战绩</view>
-            <view class="main-view-item" wx:if="{{ability}}">能力</view>
-            <view class="main-view-item" wx:if="{{assets}}">资产</view>
+            <!--引入战绩模板-->
+            <import src="record.wxml"/>
+            <template is="record-list" data="{{record}}" />
+            <view class="main-view-item" hidden="{{ability}}">能力</view>
+            <view class="main-view-item" hidden="{{assets}}">资产</view>
         </view>
     </view>
 </view>
+
+

@@ -7,4 +7,15 @@
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
+  background: lightgray;
+  font-family: 'Microsoft YaHei',Tahoma,Arial;
 } 
+
+.arrow_right{
+  width:10rpx;
+  height:18rpx;
+}
+
+.golden{
+  color: #CC8F33;
+}

@@ -4,9 +4,9 @@
     "pages/index/index"
   ],
   "window": {
-    "navigationBarTextStyle": "black",
+    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "LOL",
-    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarBackgroundColor": "#000000",
     "backgroundColor": "#000000"
   },
   "networkTimeout": {
