@@ -10,14 +10,14 @@
         <picker bindchange="selectArea" value="{{areaIndex}}" range="{{areaItems}}">
             <view class="header-photo">
                 <image class="header-frame" src="../../image/game_header_frame.png"></image>
-                <image class="game-header" src="../../image/nearbydefaulthead.png"></image>
+                <image class="game-header" src="{{gameHeader}}"></image>
                 <image class="level-bg" src="../../image/game_level_bg.png"></image>
                 <text class="level-text">30</text>
             </view>
         </picker>
         <navigator url="bind">
             <view class="game-info" >
-                <text class="game-nick">老子就是喷子</text>
+                <text class="game-nick">{{UserHotInfo.name ? UserHotInfo.name : "点击绑定账号"}}</text>
                 <image class="gender" src="../../image/gender_man.png"></image>
             </view>
         </navigator>

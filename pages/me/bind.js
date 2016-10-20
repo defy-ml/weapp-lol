@@ -24,5 +24,11 @@ Page( {
         userAreaItems: res.data
       })
     })
+  },
+  selectUserArea: function( event ) {
+    console.log( event )
+    app.globalData.UserHotInfo.qquin = event.currentTarget.dataset.qquin
+    app.globalData.UserHotInfo.areaid = event.currentTarget.dataset.areaid
+    wx.navigateBack()
   }
 })

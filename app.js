@@ -2,7 +2,7 @@
 App( {
   globalData: {
     areaItems: [],
-    userInfo: {}
+    UserHotInfo: {}
   },
   onLaunch: function() {
   }

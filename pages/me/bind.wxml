@@ -7,10 +7,11 @@
 <input class="nickName" bindinput="bindKeyInput" placeholder="请输入召唤师名称" placeholder-style="color:gray;font-size:24rpx;"/>
 <icon bindtap="searchTap" data-name="{{inputValue}}" type="search"/>
 </view>
-<view class="userAreaItem" wx:for="{{userAreaItems}}">
-  <image class="hero-avatar" src="../../image/find_icon_normal.jpg"></image>
-  <text>{{item.name}}</text>
-  <text>{{item.areaName}}</text>
+<view class="userAreaItem" bindtap="selectUserArea" wx:for="{{userAreaItems}}" data-qquin="{{item.qquin}}" data-areaid="{{item.area_id}}">
+    <image class="hero-avatar" src="http://img.lolbox.duowan.com/profileIcon/profileIcon{{item.icon_id}}.jpg"></image>
+    <!--http://cdn.tgp.qq.com/pallas/images/usericon/{{item.icon_id}}.png-->
+    <text>{{item.name}}</text>
+    <text>{{item.areaName}}</text>
 </view>
 <template is="footer" data="{{loadingHidden}}" />
 </view>
