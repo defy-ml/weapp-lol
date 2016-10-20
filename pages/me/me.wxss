@@ -92,6 +92,8 @@
 
 .main-view-item{
   width: 100%;
+  background: lightgray;
+
 }
 
 .record-top{

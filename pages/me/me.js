@@ -1,7 +1,8 @@
 //me.js
 const api = require( "../../lib/lolapi.js" )
+const common = require( "../../lib/common.js" )
 
-var areaIndex, areaId, _areaItems = [];
+var areaIndex
 var app = getApp()
 Page( {
   data: {
@@ -39,31 +40,23 @@ Page( {
   //选择区服
   selectArea: function( e ) {
     areaIndex = e.detail.value
-    for( var i = 0;i < _areaItems.length;i++ ) {
-      if( _areaItems[ i ].name == this.data.areaItems[ areaIndex ] ) {
-        areaId = _areaItems[ i ].id
-        //修改title
-        wx.setNavigationBarTitle( {
-          title: _areaItems[ i ].name
-        })
-        break
-      }
-    }
+    common.setNavigationBarTitle( app.globalData.areaItems[ areaIndex ] )
   },
   onLoad: function( options ) {
     //初始化apiapi
-    api.init(this)
+    api.init( this )
     var that = this
     //获取区服
     api.Area( {}, function( res ) {
-      _areaItems = res.data
-      var areaItems = [];
-      for( var i = 0;i < _areaItems.length;i++ ) {
-        areaItems.push( _areaItems[ i ].name );
+      var areaItems = []
+      for( var i = 0;i < res.data.length;i++ ) {
+        areaItems[ res.data[ i ].id - 1 ] = res.data[ i ].name
       }
+      app.globalData.areaItems = areaItems;
       that.setData( {
         areaItems: areaItems
       })
+      console.log( areaItems )
     });
   },
   onReady: function() {

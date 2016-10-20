@@ -15,10 +15,13 @@
                 <text class="level-text">30</text>
             </view>
         </picker>
-        <view class="game-info">
-            <text class="game-nick">老子就是喷子</text>
-            <image class="gender" src="../../image/gender_man.png"></image>
-        </view>
+        <navigator url="bind">
+            <view class="game-info" >
+                <text class="game-nick">老子就是喷子</text>
+                <image class="gender" src="../../image/gender_man.png"></image>
+            </view>
+        </navigator>
+        
     </view>
     <view class="main">
         <!--选项卡-->
@@ -37,4 +40,6 @@
     </view>
     <template is="footer" data="{{loadingHidden}}" />
 </view>
+
+
 

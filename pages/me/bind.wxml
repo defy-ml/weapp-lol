@@ -1,0 +1,16 @@
+<import src="../common/header.wxml" />
+<import src="../common/footer.wxml" />
+<!--bind.wxml-->
+<view class="container">
+<template is="header" />
+<view class="bindTop">
+<input class="nickName" bindinput="bindKeyInput" placeholder="请输入召唤师名称" placeholder-style="color:gray;font-size:24rpx;"/>
+<icon bindtap="searchTap" data-name="{{inputValue}}" type="search"/>
+</view>
+<view class="userAreaItem" wx:for="{{userAreaItems}}">
+  <image class="hero-avatar" src="../../image/find_icon_normal.jpg"></image>
+  <text>{{item.name}}</text>
+  <text>{{item.areaName}}</text>
+</view>
+<template is="footer" data="{{loadingHidden}}" />
+</view>

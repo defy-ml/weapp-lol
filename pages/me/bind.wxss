@@ -1,0 +1,47 @@
+
+.bindTop{
+    display: flex;
+    width: 100%;
+    border-bottom: solid 1px gray;
+    padding-top: 20rpx;
+    padding-left: 20rpx;
+    padding-bottom: 20rpx;
+    margin-bottom: 15rpx;
+    background: #fff;
+}
+
+.nickName{
+    flex: 9;
+    font-size: 30rpx;
+    color: gray;
+}
+
+.bindTop icon{
+    flex: 1;
+    width: 25rpx;
+    vertical-align: text-bottom;
+}
+
+.userAreaItem{
+    width: 100%;
+    padding: 10rpx; 
+    display: flex;
+    border-bottom: solid 1px gray;
+    background: #fff;
+    color: gray;
+}
+
+.userAreaItem text{
+    flex: 1;
+    font-size: 24rpx;
+    color: #000;
+    text-align: center;
+    line-height: 79rpx;
+}
+
+.hero-avatar{
+  width: 79rpx;
+  height:79rpx;
+  padding-left: 10rpx;
+  vertical-align: middle;
+}
