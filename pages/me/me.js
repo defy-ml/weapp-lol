@@ -2,7 +2,7 @@
 const api = require( "../../lib/lolapi.js" )
 
 var areaIndex, areaId, _areaItems = [];
-
+var app = getApp()
 Page( {
   data: {
     record: false,
@@ -42,13 +42,19 @@ Page( {
     for( var i = 0;i < _areaItems.length;i++ ) {
       if( _areaItems[ i ].name == this.data.areaItems[ areaIndex ] ) {
         areaId = _areaItems[ i ].id
+        //修改title
+        wx.setNavigationBarTitle( {
+          title: _areaItems[ i ].name
+        })
         break
       }
     }
   },
   onLoad: function( options ) {
-    var that = this;
-    // 页面初始化 options为页面跳转所带来的参数
+    //初始化apiapi
+    api.init(this)
+    var that = this
+    //获取区服
     api.Area( {}, function( res ) {
       _areaItems = res.data
       var areaItems = [];
@@ -73,3 +79,4 @@ Page( {
     // 页面关闭
   }
 })
+

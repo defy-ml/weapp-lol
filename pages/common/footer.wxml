@@ -1,0 +1,3 @@
+<template name="footer">
+  <loading hidden="{{loadingHidden}}">加载中...</loading>
+</template>

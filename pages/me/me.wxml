@@ -1,5 +1,8 @@
+<import src="../common/header.wxml" />
+<import src="../common/footer.wxml" />
 <!--me.wxml-->
 <view class="container">
+    <template is="header" />
     <!--头部-->
     <view class="header">
         <!--背景-->
@@ -32,6 +35,6 @@
             <view class="main-view-item" hidden="{{assets}}">资产</view>
         </view>
     </view>
+    <template is="footer" data="{{loadingHidden}}" />
 </view>
-
 
