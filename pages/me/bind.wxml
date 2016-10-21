@@ -12,6 +12,7 @@
     <!--http://cdn.tgp.qq.com/pallas/images/usericon/{{item.icon_id}}.png-->
     <text>{{item.name}}</text>
     <text>{{item.areaName}}</text>
+    <text>{{item.level}}级</text>
 </view>
 <template is="footer" data="{{loadingHidden}}" />
 </view>

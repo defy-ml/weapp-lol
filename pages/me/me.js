@@ -3,14 +3,13 @@ const api = require( "../../lib/lolapi.js" )
 const common = require( "../../lib/common.js" )
 
 var areaIndex
-var app = getApp()
+const app = getApp()
 Page( {
   data: {
     record: false,
     ability: true,
     assets: true,
-    areaIndex: areaIndex || 0,
-    gameHeader: ''
+    areaIndex: areaIndex || 0
   },
   //选项卡点击事件
   navTap: function( event ) {
@@ -38,11 +37,6 @@ Page( {
         break
     }
   },
-  //选择区服
-  selectArea: function( e ) {
-    areaIndex = e.detail.value
-    common.setNavigationBarTitle( app.globalData.areaItems[ areaIndex ] )
-  },
   onLoad: function( options ) {
     //初始化apiapi
     api.init( this )
@@ -58,9 +52,16 @@ Page( {
         that.setData( {
           areaItems: areaItems
         })
+        wx.setStorage( {
+          key: "areaItems",
+          data: areaItems
+        })
       });
     }
 
+    this.setData( {
+      UserHotInfo: app.globalData.UserHotInfo
+    })
 
   },
   onReady: function() {
@@ -68,17 +69,24 @@ Page( {
   },
   onShow: function() {
     // 页面显示
-    //获取用户基本信息
+    //初始化apiapi
     api.init( this )
     var that = this
+    //获取用户基本信息
     if( common.isExitsVariable( app.globalData.UserHotInfo.qquin ) && common.isExitsVariable( app.globalData.UserHotInfo.areaid ) ) {
       api.UserHotInfo( { qquin: app.globalData.UserHotInfo.qquin, vaid: app.globalData.UserHotInfo.areaid }, function( res ) {
         console.log( res )
-        app.globalData.UserHotInfo = res.data[ 0 ]
-        that.setData( {
-          UserHotInfo: res.data[ 0 ],
-          gameHeader: "http://img.lolbox.duowan.com/profileIcon/profileIcon" + res.data[ 0 ].icon + ".jpg"
-        })
+        if( res.data[ 0 ] ) {
+          res.data[ 0 ].gameHeader = "http://img.lolbox.duowan.com/profileIcon/profileIcon" + res.data[ 0 ].icon + ".jpg"
+          app.globalData.UserHotInfo = res.data[ 0 ]
+          that.setData( {
+            UserHotInfo: res.data[ 0 ]
+          })
+          wx.setStorage( {
+            key: "UserHotInfo",
+            data: res.data[ 0 ]
+          })
+        }
       })
     }
   },

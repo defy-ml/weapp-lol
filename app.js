@@ -1,9 +1,9 @@
 //app.js
 App( {
   globalData: {
-    areaItems: [],
-    UserHotInfo: {}
   },
   onLaunch: function() {
+    this.globalData.UserHotInfo = wx.getStorageSync( 'UserHotInfo' ) || {}
+    this.globalData.areaItems = wx.getStorageSync( 'areaItems' ) || []
   }
 })
